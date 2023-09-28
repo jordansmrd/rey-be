@@ -274,8 +274,8 @@ const tenantController = {
         token: tokenJwt,
       });
     } catch (error) {
-      console.log(error);
-      return res.status(500).send(error);
+      const tes = console.log(error);
+      return res.status(500).send({ error, tes });
     }
   },
   getTenantById: async (req, res) => {
