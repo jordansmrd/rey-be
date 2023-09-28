@@ -160,7 +160,9 @@ const tenantController = {
       mailer({
         subject: "Reset Password (5 min expired)",
         to: tenant.dataValues.email,
-        text: "http://localhost:3000/resetPassword/" + token.dataValues.token,
+        text:
+          "https://rey-api.jordanong.pw/resetPassword/" +
+          token.dataValues.token,
       });
       return res.status(200).send({ message: "We've send an email to you" });
     } catch (error) {
@@ -215,7 +217,6 @@ const tenantController = {
           valid: true,
         },
       });
-
       if (!check) {
         throw new Error("Token has been used before");
       }
@@ -229,7 +230,9 @@ const tenantController = {
           },
         }
       );
-      return res.send({ message: "Reset password succesfully, arigatou!" });
+      return res.send({
+        message: "Reset password succesfully, arigatou!",
+      });
     } catch (error) {
       console.log(error);
       res.status(500).send({
