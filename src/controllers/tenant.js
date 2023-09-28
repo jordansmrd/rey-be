@@ -161,7 +161,7 @@ const tenantController = {
         subject: "Reset Password (5 min expired)",
         to: tenant.dataValues.email,
         text:
-          "https://rey-api.jordanong.pw/resetPassword/" +
+          "https://jcwd020605.project-kelas.pw/resetPassword/" +
           token.dataValues.token,
       });
       return res.status(200).send({ message: "We've send an email to you" });
